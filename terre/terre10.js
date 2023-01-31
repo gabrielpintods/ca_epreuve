@@ -90,7 +90,7 @@ function testDichoSearch() {
     let validResult;
     let ok = 0;
     let i;
-    for (i = 0; i < 1000; i++) {
+    for (i = 0; i < 200; i++) {
         tmp = dichoSearch(i);
         result = Math.sqrt(i);
         validResult = Math.round(result * 1000) / 1000;
@@ -104,5 +104,5 @@ function testDichoSearch() {
     console.log(ok, "/", i, "test validés");
 }
 
- testDichoSearch();
-// console.log(dichoSearch(process.argv[2], process.argv[3]));
+// testDichoSearch();
+console.log(dichoSearch(process.argv[2], process.argv[3]));

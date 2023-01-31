@@ -4,14 +4,18 @@ function triee(args){
     let correct = true;
 
     // vérification 
-    for(let k = 0; k < args.length; k++) {
-        if (!isNaN(args[k])) {
-            let tmp = parseInt(args[k], 10);
-            tabInt[k] = tmp;
-        } else {
-            correct = false;
+    if(args[0] != undefined) {
+        for(let k = 0; k < args.length; k++) {
+            if (!isNaN(args[k])) {
+                let tmp = parseInt(args[k], 10);
+                tabInt[k] = tmp;
+            } else {
+                correct = false;
+            }
         }
-    }
+    } else {
+        correct = false;
+    } 
     
     if (correct) {
         // croissant ou pas

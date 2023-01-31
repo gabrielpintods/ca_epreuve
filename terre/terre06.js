@@ -1,6 +1,6 @@
 function division(x, y) {
     if (x >= y && y != 0) {
-        let result = ~~(x / y);
+        let result = Math.round(x / y);
         let reste = x % y;
         console.log("résultat: " + result);
         console.log("reste: " + reste);

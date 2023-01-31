@@ -5,7 +5,7 @@ if (Number.parseInt(argu)) {
     if (argu % 2 == 0) 
     {
         console.log(argu + " est pair");
-    } else if (argu % 2 != 0)
+    } else 
     {
         console.log(argu + " est impair");
     } 

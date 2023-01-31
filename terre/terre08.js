@@ -1,11 +1,14 @@
 function taille(chaine, ...restParam) {
-    if( (/^\d+$/.test(chaine) == false) && (restParam[0] == undefined ) ){ // check if test contains only numbers
+    if(isNaN(chaine) && (restParam[0] == undefined ) ){ // check if test contains only numbers
         console.log(chaine.length);
     } else {
         console.log("error");
     }
 }
 
-
-taille(process.argv[2], process.argv[3]);
+if(process.argv[2] == undefined) {
+    console.log("error");
+} else {
+    taille(process.argv[2], process.argv[3]);
+}
 

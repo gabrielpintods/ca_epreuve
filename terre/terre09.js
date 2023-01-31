@@ -1,8 +1,8 @@
 function puissance (nb, exp, ...restParam) {
-    let nbInt = parseInt(nb, 10);
-    let expInt = parseInt(exp, 10);
+    let nbInt = parseInt(nb);
+    let expInt = parseInt(exp);
     let result = nb;
-    if ( (restParam[0] == undefined) && !(isNaN(nbInt)) && !(isNaN(expInt)) ) {
+    if ( restParam[0] == undefined && Number.isInteger(nbInt) && Number.isInteger(expInt) ) {
         for (let i = 1; i < exp; i++) {
             result = result * nb;
         }

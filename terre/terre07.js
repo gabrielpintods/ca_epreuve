@@ -7,4 +7,8 @@ function inverse(chaine) {
     }
     console.log();
 }
-inverse (process.argv[2]);
+if(process.argv[2] == undefined || process.argv[3] != undefined) {
+    console.log("error");
+} else {
+    inverse (process.argv[2]);
+}
