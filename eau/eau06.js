@@ -1,3 +1,4 @@
+// return true if the str is includes in the sentence
 function checkIfIncludes (index, sentence, str) {
     let ret = true;
     for (let j = 0; j < str.length && ret; j++) {
@@ -9,6 +10,9 @@ function checkIfIncludes (index, sentence, str) {
     return ret;
 }
 
+
+// cross the sentence until the first element of str match 
+// with one element of sentence and calls checkIfIncludes
 function strIncludes(sentence, str) {
     let include = false;
     let substring
@@ -22,8 +26,6 @@ function strIncludes(sentence, str) {
     return include;
 }
 
-
-
 function checkError(args) {
     if (args[0] === undefined || args[1] === undefined || args[2] !== undefined || !isNaN(args[0]) || !isNaN(args[1]) ) {
         return true;
@@ -32,8 +34,10 @@ function checkError(args) {
     }
 }
 
+// Parsing 
 let args = process.argv.slice(2);
 
+// Display 
 if (checkError(args)) {
     console.log("error");
 } else {

@@ -1,3 +1,4 @@
+// switch the first letter of a word into an Upper case
 function firstCharMaj(sentence) {
     let strMaj = '';
     let toMaj;
@@ -18,6 +19,7 @@ function firstCharMaj(sentence) {
     return strMaj;
 }
 
+// check if the letter of a word is a letter
 function isAlphabetic(chr) {
     let ret = false;
     let dichoMin = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -35,7 +37,7 @@ function isAlphabetic(chr) {
     return ret;
 }
 
-
+// check if there is no second arguments
 function checkError(args) {
     let ret = true;
     if (args[0] === undefined || args[1] !== undefined || !isNaN(args[0])  ) {
@@ -44,9 +46,10 @@ function checkError(args) {
     return ret;
 }
 
-
+// parsing 
 let args = process.argv.slice(2);
 
+// assert
 if (!checkError(args)) {
     console.log("error");
 } else {

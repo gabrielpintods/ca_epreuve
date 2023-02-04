@@ -1,3 +1,4 @@
+// compare if the combination of the two numbers are equals or not. 011 = false, 123 = true.
 function isUnique(numb) {
     let ret = true;
     let numbStr;
@@ -13,6 +14,7 @@ function isUnique(numb) {
     return ret
 }
 
+// check if the combination of the two numbers are already listed in the array of combination.
 function isPresent(numb, arrCombination) {
     let idem = false;
     for (let i = 0; i < arrCombination.length && !idem; i++ ) {

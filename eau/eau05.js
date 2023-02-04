@@ -1,3 +1,4 @@
+// return true if numb is a prime number. 
 function primeNb(numb) {
     numb = Number.parseInt(numb);
     let cpt = 1;
@@ -13,6 +14,7 @@ function primeNb(numb) {
     }
 }
 
+// search the first prime number after numb. 
 function findUp (numb) {
     let i = Number.parseInt(numb) + 1;
     let find = false;
@@ -34,8 +36,10 @@ function checkError(args) {
     }
 }
 
+// parsing 
 let args = process.argv.slice(2);
 
+// display
 if (checkError(args)) {
     console.log(-1);
 } else {

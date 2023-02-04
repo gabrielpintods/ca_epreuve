@@ -1,3 +1,4 @@
+// use a regex check to each character of the str to see if it contains only numbers
 function checkIsNumber(str) {
     let isNumber = true;
     for(let i = 0; i < str.length && isNumber; i++) {
@@ -8,6 +9,7 @@ function checkIsNumber(str) {
     return isNumber
 }
 
+// check if there is no second argument
 function checkError(args) {
     let ret = true;
     if (args[0] === undefined || args[1] !== undefined) {
@@ -19,6 +21,7 @@ function checkError(args) {
 // parsing 
 let args = process.argv.slice(2);
 
+// assert
 if (!checkError(args)) {
     console.log("error");
 } else {

@@ -1,3 +1,4 @@
+// check if two numbers are different
 function isDifferent (numb1, numb2) {
     let isEqual = false;
     if (numb1 === numb2) {
@@ -6,6 +7,8 @@ function isDifferent (numb1, numb2) {
     return isEqual;
 }
 
+
+// check if the combination of the two numbers are already listed in the array of combination.
 function isPresent(numb1, numb2, arrCombination) {
     let idem = false;
     let numb1InArr;
@@ -21,6 +24,7 @@ function isPresent(numb1, numb2, arrCombination) {
     return idem;
 }
 
+// display 
 function twoNumbersCombination () {
     let numbStr;
     let arrCombination = [];

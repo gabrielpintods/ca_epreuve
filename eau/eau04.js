@@ -1,3 +1,4 @@
+// recurive function that calls ifself until n < 2
 function fibonacci(n) {
     if (n < 2) {
         return n;
@@ -7,6 +8,7 @@ function fibonacci(n) {
     }
 }
 
+// check if the array of arguments contain more than one element and if this element is < 0
 function checkError(args) {
     if (args[0] < 0 || isNaN(args[0]) || args[0] === undefined || args[1] !== undefined ) {
         return true;
@@ -18,7 +20,7 @@ function checkError(args) {
 // Parsing
 let args = process.argv.slice(2);
 
-// Affichages
+// Display
 if(checkError(args)) {
     console.log(-1);
 } else {

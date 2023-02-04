@@ -39,7 +39,7 @@ function checkError(str) {
 // parsing 
 let args = process.argv.slice(2);
 
-// result display
+// assert
 if(!checkError(args)) {
     console.error("error");
 } else {

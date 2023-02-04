@@ -1,3 +1,4 @@
+// convert the string into upper and lower cases at each letters
 function convert(str) {
     let strMajMin = '';
     let strMaj = str.toUpperCase();
@@ -19,7 +20,7 @@ function convert(str) {
     return strMajMin;
 }
 
-
+// check if all the character of the argument are letter [a-z][A-Z]. 
 function checkError(args) {
     let ret = true;
     if (args[0] === undefined || args[1] !== undefined || !isNaN(args[0])  ) {
@@ -46,8 +47,10 @@ function checkError(args) {
     return ret;
 }
 
+// parsing
 let args = process.argv.slice(2);
 
+// display
 if (!checkError(args)) {
     console.log("error");
 } else {

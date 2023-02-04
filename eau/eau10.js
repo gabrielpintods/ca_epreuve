@@ -1,3 +1,4 @@
+// display the number between x (include) and y
 function minMax(x, y) {
     let min = parseInt(x);
     let max = parseInt(y);
@@ -13,6 +14,7 @@ function minMax(x, y) {
     console.log();
 }
 
+// check if there is no a third argument
 function checkError(x, y, ...restParam) {
     let ret = true;
     if (x === undefined || restParam[0] != undefined || isNaN(x) || isNaN(y) ) {
@@ -26,5 +28,6 @@ let x = process.argv[2];
 let y = process.argv[3];
 let restParam = process.argv[4];
 
+// assert 
 if (!checkError(x, y, restParam)) { console.log("error");} 
 else { minMax(x, y); }
