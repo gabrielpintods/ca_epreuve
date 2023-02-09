@@ -22,17 +22,8 @@ function firstCharMaj(sentence) {
 // check if the letter of a word is a letter
 function isAlphabetic(chr) {
     let ret = false;
-    let dichoMin = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    let dichoMaj = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-    for(let j = 0; j < dichoMin.length && !ret; j++) {
-        if (dichoMin[j] === chr) {
-             ret = true;
-        }
-    }
-    for(j = 0; j < dichoMaj.length && !ret; j++) {
-        if (dichoMaj[j] === chr) {
-            ret = true;
-        }
+    if((/[a-zA-z]/.test(chr))) {
+        ret = true;
     }
     return ret;
 }
