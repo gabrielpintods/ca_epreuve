@@ -1,5 +1,5 @@
 // research at each character if it match wih the separator and cut the word if it match
-function splitStr(str, separator) {
+export function splitStr(str, separator) {
     let lastIndex = 0;
     let wordCut;
     let strCut = [];
@@ -44,12 +44,19 @@ function checkError(arrArgs) {
 let args = process.argv.slice(2);
 
 // assert 
-if(!checkError(args)) {
-    console.error("error");
-} else {
-    let space = ' ';
-    let tab = '\t';
-    let backLine = '\n';
-    let result = splitStr(args[0], space);
-    displayArr(result);
+function exec() {
+    if(!checkError(args) ) {
+        console.log(process.argv[1]);
+        console.error("error");
+    } else {
+        let space = ' ';
+        let tab = '\t';
+        let backLine = '\n';
+        let result = splitStr(args[0], space);
+        displayArr(result);
+    }
+}
+
+if(process.argv[1].includes("air01.js")) {
+    exec()
 }

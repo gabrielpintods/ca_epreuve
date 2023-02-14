@@ -1,5 +1,5 @@
 // return a string of the element of the array(str) spaced of a separator
-function concatStr(str) {
+export function concatStr(str) {
     let separator = str[str.length - 1];
     let strConcat = '';
     for (let i = 0; i < str.length - 1; i++) {
@@ -21,9 +21,15 @@ function checkError(str) {
 let args = process.argv.slice(2);
 
 // assert 
-if(!checkError(args)) {
-    console.error(args);
-} else {
-    let result = concatStr(args);
-    console.log(result);
+function exec() {
+    if(!checkError(args)) {
+        console.error(args);
+    } else {
+        let result = concatStr(args);
+        console.log(result);
+    }
+}
+
+if(process.argv[1].includes("air03.js")) {
+    exec();
 }

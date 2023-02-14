@@ -1,6 +1,6 @@
 // return a string with only one charachter when there is two same character wich are next to themself
-function diffCharNextTo (str) {
-    let strWODboule = '';
+export function diffCharNextTo (str) {
+    let strWOTDouble = '';
     for(let i = 0; i < str.length - 1; i++) {
         if(str[i] === str[i + 1]) {
             for(let j = i + 1; j < str.length - 1; j++) {
@@ -12,9 +12,9 @@ function diffCharNextTo (str) {
                 }
             }
         } 
-        strWODboule = strWODboule + str[i];
+        strWOTDouble = strWOTDouble + str[i];
     }
-    return strWODboule;
+    return strWOTDouble;
 }
 
 // check if the array of argument is not empty and if there is only one argument
@@ -30,9 +30,15 @@ function checkError(str) {
 let args = process.argv.slice(2);
 
 // assert
-if(!checkError(args)) {
-    console.error("error");
-} else {
-    let result = diffCharNextTo(args[0]);
-    console.log(result);
+function exec() {
+    if(!checkError(args)) {
+        console.error("error");
+    } else {
+        let result = diffCharNextTo(args[0]);
+        console.log(result);
+    }
+}
+
+if(process.argv[1].includes('air05.js')) {
+    exec();
 }

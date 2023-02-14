@@ -1,5 +1,5 @@
 // return the array split in function of the separator
-function splitStr(str, separator) {
+export function splitString(str, separator) {
     let strCut = [];
     let lastIndex = 0;
     let wordCut;
@@ -61,9 +61,15 @@ function checkError(arrArgs) {
 let args = process.argv.slice(2);
 
 // assert 
-if(!checkError(args)) {
-    console.error("error");
-} else {
-    let result = splitStr(args[0], args[1]);
-    displayArr(result);
+function exec () {
+    if(!checkError(args)) {
+        console.error("error");
+    } else {
+        let result = splitString(args[0], args[1]);
+        displayArr(result);
+    }
+}
+
+if(process.argv[1].includes("air02.js")) {
+    exec();
 }

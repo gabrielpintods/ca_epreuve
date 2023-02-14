@@ -1,5 +1,5 @@
 // return the oddOneOut, if it there is none oddOne = 'not found'
-function oddOneOut(str) {
+export function oddOneOut(str) {
     let oddOne = '';
     let find = false;
     for (let i = 0; i < str.length && !find; i++) {
@@ -38,9 +38,15 @@ function checkError(str) {
 let args = process.argv.slice(2);
 
 // assert
-if(!checkError(args)) {
-    console.error("error");
-} else {
-    let result = oddOneOut(args);
-    console.log(result);
+function exec() {
+    if(!checkError(args)) {
+        console.error("error");
+    } else {
+        let result = oddOneOut(args);
+        console.log(result);
+    }
+}
+
+if(process.argv[1].includes("air04.js")) {
+    exec();
 }
