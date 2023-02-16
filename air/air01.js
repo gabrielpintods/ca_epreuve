@@ -58,5 +58,5 @@ function exec() {
 }
 
 if(process.argv[1].includes("air01.js")) {
-    exec()
+    exec();
 }

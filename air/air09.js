@@ -1,4 +1,3 @@
-// 
 function fusion(arr1, arr2) {
     let newArray = [];
     let j = 0;

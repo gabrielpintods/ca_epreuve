@@ -1,5 +1,5 @@
+import * as fs from 'fs';
 function readFile(fileName) {
-    let fs = require('fs');
     let data = fs.readFileSync(fileName, 'utf8');
     return data;      
 }
