@@ -66,7 +66,7 @@ function doesInclude(toFind, toFindTmp) {
     return include;
 }
 
-// search if there a part of the board which is equals to toFind and return the coordinates of the top right element
+// search if there is a part of the board which is equals to toFind and return the coordinates of the top right element
 function search(board, toFind) {
     let coord = [];
     let toFindTmp;
@@ -93,7 +93,7 @@ function buildArr(board, toFind, coord) {
     for(let i = 0; i < board.length; i++) { // i = board index first dimension
         ret[i] = [];
         for (let j = board[i].length - 1; j >= 0; j--) { // j = board index second dimension
-            if (i === coord[0] && j === coord[1]) {
+            if (i === coord[0] && j === coord[1] && l < toFind.length) {
                 for(let k = toFind[l].length - 1; k >= 0; k--) { // k = toFind index second dimension
                     if(toFind[l][k] === ' ') {
                         ret[i][j] = '-';
@@ -122,7 +122,8 @@ function displayBoard(board) {
         for(let j = 0; j < board[i].length; j++) {
             process.stdout.write(board[i][j]);
             if(coord[0] === undefined && board[i][j] !== '-') {
-                coord = [i,j];
+                coord[0] = j;
+                coord[1] = (board.length - 1) - i;
             }
         }
         console.log();
@@ -138,7 +139,7 @@ function finalMess(board, toFind, coord) {
         console.log("Find !");
         let finalBoard = buildArr(board, toFind, coord);
         coord = displayBoard(finalBoard);
-        console.log("Coordinates : " + coord[1] + "," + coord[0]);
+        console.log("Coordinates : " + coord[0] + "," + coord[1]);
     }
 }
 
