@@ -59,7 +59,7 @@ function displaySdk(sdk) {
     }
 }
 
-// check if i is not in the i line
+// check if k is not in the i line
 function inLine (k, sdk, i) {
     for (let j = 0; j < sdk.length; j++) {
         if (sdk[i][j] === k) {
