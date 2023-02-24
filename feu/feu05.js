@@ -58,6 +58,7 @@ function boardChar(str) {
     return char;
 }
 
+// check if a square contains obstacle
 function isValid(sqr, obstacle) {
     for(let i = 0; i < sqr.length; i++) {
         for(let j = 0; j < sqr.length; j++) {
@@ -69,6 +70,7 @@ function isValid(sqr, obstacle) {
     return true;
 }
 
+// copy the sqr element by element
 function copyArr(sqr) {
     let sqrCopy = [];
     for(let i = 0; i < sqr.length; i++) {
@@ -80,6 +82,7 @@ function copyArr(sqr) {
     return sqrCopy;
 }
 
+// build a square corresponding to the coordinates of the board
 function toSquare(board, iBeg, iEnd, jBeg, jEnd) {
     let sqr = [];
     let k = 0; // k = arr index first dimension
@@ -100,6 +103,7 @@ function toSquare(board, iBeg, iEnd, jBeg, jEnd) {
     return sqr;
 }
 
+// check if sqr is bigger than the square save
 function biggerThanSave(sqr, sqrSave) {
     if(sqr.length > sqrSave.length) {
         return true;
@@ -108,6 +112,7 @@ function biggerThanSave(sqr, sqrSave) {
     }
 }
 
+// recursive method that find the bigger valid square of an exact point on the board
 function searchSqr(board, i, iEnd, j, jEnd, obstacle) {
     let sqr = toSquare(board, i, iEnd, j, jEnd);
     if(sqr !== null) {
@@ -121,6 +126,7 @@ function searchSqr(board, i, iEnd, j, jEnd, obstacle) {
     }
 }
 
+// search the bigger square of the board
 function biggerSqr(board, char) {
     let sqrSave = [];
     let iEnd = 0;
@@ -153,7 +159,8 @@ function biggerSqr(board, char) {
     return {sqrSave, coord};
 }
 
-function displayRes(board, sqr, coord, char) {
+// display the result 
+function displayRes(board, coord, char) {
     for(let i = 0; i < board.length; i++) {
         for(let j = 0; j < board[i].length; j++) {
             if(i >= coord[0] && i <= coord[2] && j >= coord[1] && j <= coord[3]) {
@@ -166,6 +173,7 @@ function displayRes(board, sqr, coord, char) {
     }
 }
 
+// generate a random board
 function generator() {
     let str = Math.floor(Math.random() * 8) + 1;
     str += '.' + 'x' + 'o' + '\n';
@@ -190,6 +198,7 @@ function generator() {
     return str;
 }
 
+// normalize the string from the file or the generate board into a 2d array and call biggerSqr
 function exec(args) {
     let str = '';
     let char = [];
@@ -203,10 +212,14 @@ function exec(args) {
         char = boardChar(str);
         board = strToArr(str, char);
     }
-    let resExec = biggerSqr(board, char);
-    // display the board
-    console.log('Board: \n\n' + str + '\n\nResult: \n');
-    displayRes(board, resExec.sqrSave, resExec.coord, char);
+    if(board !== null && char !== null) {
+        let resExec = biggerSqr(board, char);
+        // display the board
+        console.log('Board: \n\n' + str + '\n\nResult: \n');
+        displayRes(board, resExec.coord, char);
+    } else {
+        console.error("error: wrong parameter");
+    }
 }
 
 // parsing
